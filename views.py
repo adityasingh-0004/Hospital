@@ -13,12 +13,12 @@ from datetime import datetime
 
 def home(request):
     if request.method == 'POST':
-        name = request.POST.get('name', '').strip()
-        phone_number = request.POST.get('phone_number', '').strip()
-        service = request.POST.get('service', '').strip()
-        chiropractor = request.POST.get('chiropractor', '').strip()
-        date = request.POST.get('date', '').strip()
-        time = request.POST.get('time', '').strip()
+        name = request.POST.get('name')
+        phone_number = request.POST.get('phone_number')
+        service = request.POST.get('service')
+        chiropractor = request.POST.get('chiropractor')
+        date = request.POST.get('date')
+        time = request.POST.get('time')
 
         if not all([name, phone_number, service, chiropractor, date, time]):
             messages.error(request, 'Please fill in all appointment details.')
